@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Check is-active Class",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting",
+        "alarms",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "https://quaxx.com.br/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://quaxx.com.br/app/q-admin/list/tickets.php"],
+            "js": ["content.js"]
+        }
+    ]
+}
